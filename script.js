@@ -3,12 +3,14 @@ var btnSearch = document.getElementById("search");
 var listOfRepos = document.getElementById("listOfRepos");
 var newline = "\r\n";
 
-function addRepoToList(repoName) {
+function addRepoToList(repoName, repoLanguage, repoDesc) {
     var li = document.createElement("li");
     var name = document.createElement("h3");
     var language = document.createElement("span");
     var desc = document.createElement("p");
-    name.innerHTML = repoName 
+    name.innerHTML = repoName;
+    language.innerHTML = repoLanguage;
+    desc.innerHTML = repoDesc;
     li.appendChild(name);
     li.appendChild(language);
     li.appendChild(desc);
@@ -23,7 +25,7 @@ btnSearch.addEventListener("click", function(){
     .then(function(repos) {
         listOfRepos.innerHTML = "";
         repos.forEach(function(repo) {
-            addRepoToList(repo.name);
+            addRepoToList(repo.name, repo.language, repo.description);
         });
     });
 }); 
