@@ -2,7 +2,7 @@ var loginElement = document.getElementById("login");
 var btnSearch = document.getElementById("search");
 var listOfRepos = document.getElementById("listOfRepos");
 var newline = "\r\n";
-var languageCount = {"JavaScript": 0, "HTML": 0}
+var languageCount = {}
 
 function addRepoToList(repoName, repoLanguage, repoDesc) {
     var li = document.createElement("li");
@@ -18,6 +18,13 @@ function addRepoToList(repoName, repoLanguage, repoDesc) {
     listOfRepos.appendChild(li);
 }
 
+function countLanguages(language) {
+    if(languageCount[language] === undefined) {
+        languageCount[language] = 0;
+    }
+    languageCount[language]++;
+}
+
 btnSearch.addEventListener("click", function(){
     fetch("https://api.github.com/users/" + loginElement.value + "/repos")
     .then(function(response) {
@@ -27,12 +34,8 @@ btnSearch.addEventListener("click", function(){
         listOfRepos.innerHTML = "";
         repos.forEach(function(repo) {
             addRepoToList(repo.name, repo.language, repo.description);
-        });
-        repos.forEach(function(repo) {
-            if(languageCount[repo.language] === undefined) {
-                languageCount[repo.language] = 0;
-            }
-            languageCount[repo.language]++;
+            let language = repo.language;
+            countLanguages(language);
         });
         console.log(languageCount);
     });
