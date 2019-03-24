@@ -2,8 +2,7 @@ var loginElement = document.getElementById("login");
 var btnSearch = document.getElementById("search");
 var listOfRepos = document.getElementById("listOfRepos");
 var newline = "\r\n";
-var jsCount = 0;
-var htmlCount = 0; 
+var languageCount = {"JavaScript": 0, "HTML": 0}
 
 function addRepoToList(repoName, repoLanguage, repoDesc) {
     var li = document.createElement("li");
@@ -30,14 +29,8 @@ btnSearch.addEventListener("click", function(){
             addRepoToList(repo.name, repo.language, repo.description);
         });
         repos.forEach(function(repo) {
-            if(repo.language == "JavaScript") {
-                jsCount++;
-            } 
-            else if(repo.language == "HTML") {
-                htmlCount++;
-            }
+            languageCount[repo.language]++;
         });
-        console.log(jsCount);
-        console.log(htmlCount);
+        console.log(languageCount);
     });
 }); 
