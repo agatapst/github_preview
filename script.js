@@ -32,10 +32,10 @@ btnSearch.addEventListener("click", function(){
     })
     .then(function(repos) {
         listOfRepos.innerHTML = "";
+        languageCount = {};
         repos.forEach(function(repo) {
             addRepoToList(repo.name, repo.language, repo.description);
-            let language = repo.language;
-            countLanguages(language);
+            countLanguages(repo.language);
         });
         console.log(languageCount);
     });
