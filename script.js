@@ -2,6 +2,8 @@ var loginElement = document.getElementById("login");
 var btnSearch = document.getElementById("search");
 var listOfRepos = document.getElementById("listOfRepos");
 var newline = "\r\n";
+var jsCount = 0;
+var htmlCount = 0; 
 
 function addRepoToList(repoName, repoLanguage, repoDesc) {
     var li = document.createElement("li");
@@ -27,5 +29,15 @@ btnSearch.addEventListener("click", function(){
         repos.forEach(function(repo) {
             addRepoToList(repo.name, repo.language, repo.description);
         });
+        repos.forEach(function(repo) {
+            if(repo.language == "JavaScript") {
+                jsCount++;
+            } 
+            else if(repo.language == "HTML") {
+                htmlCount++;
+            }
+        });
+        console.log(jsCount);
+        console.log(htmlCount);
     });
 }); 
