@@ -29,8 +29,11 @@ btnSearch.addEventListener("click", function(){
             addRepoToList(repo.name, repo.language, repo.description);
         });
         repos.forEach(function(repo) {
+            if(languageCount[repo.language] === undefined) {
+                languageCount[repo.language] = 0;
+            }
             languageCount[repo.language]++;
         });
         console.log(languageCount);
     });
-}); 
+});
