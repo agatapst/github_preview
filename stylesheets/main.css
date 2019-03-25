@@ -1,11 +1,35 @@
 body {
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-    margin: 0 auto; 
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); 
 }
 
-.container { 
-    margin: 30px auto; 
-    width: 500px; 
+.main-container {
     background: white; 
-    min-height: 50%; 
-  } 
+    justify-content: center; 
+} 
+
+.container {
+    display: flex;
+    justify-content: space-around; 
+    margin: 10px 40px;
+    text-align: center; 
+    font-family: 'Quicksand', sans-serif; 
+}
+
+.features {
+    width: 100%; 
+    min-height: 30%;
+}
+
+#repositories {
+    background: green; 
+    margin-right: 10px; 
+}
+
+#languages {
+    background: yellow; 
+    margin-left: 10px; 
+}
+
+ul {
+    list-style-type: none;
+  }
