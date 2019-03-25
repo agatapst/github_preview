@@ -92,7 +92,10 @@ function createLanguagesChart() {
 btnSearch.addEventListener("click", function(){
     fetch("https://api.github.com/users/" + loginElement.value + "/repos")
     .then(function(response) {
-      return response.json();
+        if(response.ok) {
+            return response.json();
+        }
+        throw new Error('Network response was not ok.');
     })
     .then(function(repos) {
         reset();
@@ -106,7 +109,11 @@ btnSearch.addEventListener("click", function(){
             addLanguageToList(language, languageCount[language]);
         });
         createLanguagesChart()
-    });
+    })
+    .catch(function(error) {
+        console.log('There has been a problem with your fetch operation: ', error.message);
+        alert("Username not valid. :( Try another one. ")
+    })
 });
 
 
