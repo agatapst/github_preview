@@ -1,36 +1,94 @@
 body {
-    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); 
-}
+padding: 2.25em 1.6875em;
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+  }
 
-.main-container {
-    background: white; 
-    justify-content: center; 
+.main-column {
+    width: 200px;
+    height: 250px; 
+    margin-top: 100px;
+    margin-bottom: 60px; 
 } 
 
-.container {
-    display: flex;
-    justify-content: space-around; 
-    margin: 10px 40px;
+.general-column {
     text-align: center; 
+    font-family: 'Roboto Mono', sans-serif;  
+    position: relative;
+}
+
+#search-section h1 {
+    font-size: 30px; 
+    margin-bottom: 20px;
+}
+
+h2 {
     font-family: 'Quicksand', sans-serif; 
+    font-size: 15px; 
 }
 
-.features {
-    width: 100%; 
-    min-height: 30%;
-}
-
-#repositories {
-    background: green; 
-    margin-right: 10px; 
-}
-
-#languages {
-    background: yellow;  
-    margin-left: 10px; 
+#search-section {
+    background: yellow; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    background: #F6EAEA;
+    box-shadow: 0 0 3px rgba(191, 175, 156, 0.9)
 }
 
 ul {
     list-style-type: none;
     padding-inline-start: 0 !important;
   }
+
+.github-icon {
+    line-height: 2; 
+    font-size: 3rem; 
+}
+
+.search-cat {
+    position: absolute;
+    left: -210px; 
+    top: 55px; 
+    width: 60%; 
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+input {
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 3px solid #E2E2E2;
+    width: 100%;
+ }
+ 
+ input:focus {
+   border-bottom: solid 4px #DB5D43;
+   background: transparent;
+   color: #DB5D43
+}
+
+ #search {
+    font-family: 'Roboto Mono', sans-serif;
+    color: white; 
+    outline: 0;
+    margin-top: 10px; 
+    padding: 5px 10px;
+    background: #66454D;
+    border: none;
+    font-size: 15px; 
+ }

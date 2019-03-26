@@ -7,42 +7,48 @@
     <title>Top repositories app</title>
     <link rel="stylesheet" href="stylesheets/normalize.css">
     <link rel="stylesheet" href="stylesheets/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
 <body>
 
-<section class="main-container container">
-    <div id="search-section">
-        <h1>search for repos <i class="fab fa-github"></i></h1>
-        <div>
-            Username: <input id="login">
-            <button id="search">search</button>
+<section class="container is-fluid">
+    <div class="columns is-centered is-mobile">
+        <div class="main-column general-column column is-half" id="search-section">
+            <div>
+                <i class="github-icon fab fa-github"></i>
+                <h1>search for repos</h1>
+                <form><input placeholder="username" id="login"></input></form>
+                <button id="search">search</button>
+            </div>
+            <div>
+                <img src="images/cat-working-remotely.png" alt="cat working remotely" class="search-cat">
+            </div>
+        </div>
+        
+    </div>
+    <div class="general-column columns is-desktop">
+        <div class="features column" id="repositories">
+            <h1>your repositories</h1>
+            <h2>What have you been working at?</h2>
+            <div>
+                <ul id="listOfRepos"></ul>    
+            </div>
+        </div> 
+        
+        <div class="features column" id="languages">
+            <h1>your programming languages</h1>
+            <h2>Which programming language have you used?</h2>
+            <div>
+                <table class="is-bordered" id="listOfLanguages"></table>
+                <canvas id="myChart" width="400" height="300"></canvas>
+            </div>
         </div>
     </div>
 </section>
-
-<section class="container">
-    <div class="features" id="repositories">
-        <h1>your repositories</h1>
-        <div>
-            <ul id="listOfRepos">
-            </ul>    
-        </div>
-    </div> 
-
-    <div class="features" id="languages">
-        <h1>your programming languages</h1>
-        <div>
-            <table id="listOfLanguages">
-            </table>
-            <canvas id="myChart" width="400" height="300"></canvas>
-        </div>
        
-    </div>
-</section>
 <script src="script.js"></script>
 </body>
 </html>

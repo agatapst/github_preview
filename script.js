@@ -116,5 +116,3 @@ btnSearch.addEventListener("click", function(){
     })
 });
 
-
-
