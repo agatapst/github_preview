@@ -11,7 +11,7 @@ body {
 .main-column {
     width: 200px;
     height: 250px; 
-    margin-top: 100px;
+    margin-top: 70px;
     margin-bottom: 80px; 
     text-align: center; 
     font-family: 'Roboto Mono', sans-serif;
@@ -22,6 +22,9 @@ body {
     font-family: 'Roboto Mono', sans-serif;
 }
 
+.columns {
+    margin: 0 !important;
+}
 #search-section h1 {
     font-size: 30px; 
     margin-bottom: 20px;
@@ -120,8 +123,8 @@ input {
 
  .features h2 {
      margin-top: 20px;
-     margin-bottom: 30px;
-     font-size: 18px;
+     margin-bottom: 10px;
+     font-size: 20px;
  }
 
  .features h3 {
@@ -130,7 +133,7 @@ input {
 
  .features span {
     font-size: 17px;
-    color: #DB5D43
+    color: #DB5D43;
  }
 
  .features p {
@@ -138,17 +141,30 @@ input {
     font-size: 16px;
     margin-bottom: 20px;
     padding: 30px;
-    width: 450px;
+    width: 430px;
     text-align: center;
     align-items: center;
     border-bottom: 1px solid #DB5D43;
  }
 
- #myChart {
-    max-width: 100% !important;
-    margin: 0 auto;
+ table {
+     margin: 0 auto;
  }
 
+ tr {
+    border-bottom: 1px solid #DB5D43;
+ }
+
+ td {
+     padding: 20px !important;
+ }
+
+ #my-chart {
+    max-width: 100% !important;
+    margin: 40px 0 auto;
+ }
+
+ /* media queries */
  @media only screen and (max-width: 767px) {
     .search-cat {
         position: static;   
@@ -157,5 +173,14 @@ input {
 
     .main-column {
         height: 400px;
+        width: 400px;
     }
  }
+
+ @media only screen and (max-width: 479px) {
+    .features p, .features h2  { 
+        width: 100%; 
+    } 
+ }
+
+ 

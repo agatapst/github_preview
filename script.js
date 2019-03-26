@@ -1,12 +1,12 @@
 var loginElement = document.getElementById("login");
 var btnSearch = document.getElementById("search");
-var listOfRepos = document.getElementById("listOfRepos");
-var languagesChartCanvas = document.getElementById('myChart');
-var mainContent = document.getElementById('mainContent')
+var listOfRepos = document.getElementById("list-of-repos");
+var languagesChartCanvas = document.getElementById('my-chart');
+var mainContent = document.getElementById('main-content')
 var message = document.getElementById('message-alert')
 var newline = "\r\n";
 var languageCount = {};
-var listOfLanguages = document.getElementById("listOfLanguages");
+var listOfLanguages = document.getElementById("list-of-languages");
 var languagesChart;
 
 function addRepoToList(repoName, repoLanguage, repoDesc) {
