@@ -2,6 +2,7 @@ var loginElement = document.getElementById("login");
 var btnSearch = document.getElementById("search");
 var listOfRepos = document.getElementById("listOfRepos");
 var languagesChartCanvas = document.getElementById('myChart');
+var mainContent = document.getElementById('mainContent')
 var newline = "\r\n";
 var languageCount = {};
 var listOfLanguages = document.getElementById("listOfLanguages");
@@ -51,19 +52,23 @@ function reset() {
 function createLanguagesChart() {
     var ctx = languagesChartCanvas.getContext('2d');
     languagesChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'pie',
         data: {
             labels: Object.keys(languageCount),
             datasets: [{
                 label: '# of projects with a given programming language',
                 data: Object.values(languageCount),
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 206, 86)',
-                    'rgb(75, 192, 192)',
-                    'rgb(153, 102, 255)',
-                    'rgb(255, 159, 64)'
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(265, 159, 64, 0.5)',
+                    'rgba(255, 159, 90, 0.5)',
+                    'rgba(255, 11, 64, 0.5)',
+                    'rgba(200, 130, 64, 0.5)',
+                    'rgba(125, 159, 64, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -71,7 +76,11 @@ function createLanguagesChart() {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(265, 159, 90, 1)',
+                    'rgba(255, 11, 64, 1)',
+                    'rgba(200, 130, 64, 1)',
+                    'rgba(125, 159, 64, 1)',
                 ],
                 borderWidth: 1
             }]
@@ -81,7 +90,6 @@ function createLanguagesChart() {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        stepSize: 1
                     }
                 }]
             }
@@ -99,6 +107,7 @@ btnSearch.addEventListener("click", function(){
     })
     .then(function(repos) {
         reset();
+        mainContent.classList.remove('is-hidden');
         repos.forEach(function(repo) {
             addRepoToList(repo.name, repo.language, repo.description);
             countLanguages(repo.language);

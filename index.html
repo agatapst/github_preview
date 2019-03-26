@@ -16,7 +16,7 @@
 
 <section class="container is-fluid">
     <div class="columns is-centered is-mobile">
-        <div class="main-column general-column column is-half" id="search-section">
+        <div class="main-column column is-half" id="search-section">
             <div>
                 <i class="github-icon fab fa-github"></i>
                 <h1>search for repos</h1>
@@ -29,9 +29,9 @@
         </div>
         
     </div>
-    <div class="general-column columns is-desktop">
+    <div class="general-column columns is-desktop is-hidden" id="mainContent">
         <div class="features column" id="repositories">
-            <h1>your repositories</h1>
+            <h1 id="your-repositories">your repositories</h1>
             <h2>What have you been working at?</h2>
             <div>
                 <ul id="listOfRepos"></ul>    
@@ -40,10 +40,10 @@
         
         <div class="features column" id="languages">
             <h1>your programming languages</h1>
-            <h2>Which programming language have you used?</h2>
+            <h2>How many times have you used a given language in your repositories?</h2>
             <div>
-                <table class="is-bordered" id="listOfLanguages"></table>
-                <canvas id="myChart" width="400" height="300"></canvas>
+                <table class="is-hidden" id="listOfLanguages"></table>
+                <canvas id="myChart" width="280" height="200"></canvas>
             </div>
         </div>
     </div>
