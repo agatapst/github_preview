@@ -3,6 +3,7 @@ var btnSearch = document.getElementById("search");
 var listOfRepos = document.getElementById("listOfRepos");
 var languagesChartCanvas = document.getElementById('myChart');
 var mainContent = document.getElementById('mainContent')
+var message = document.getElementById('message-alert')
 var newline = "\r\n";
 var languageCount = {};
 var listOfLanguages = document.getElementById("listOfLanguages");
@@ -47,6 +48,7 @@ function reset() {
     if(languagesChart) {
         languagesChart.destroy();
     }
+    message.classList.add('is-hidden');
 }
 
 function createLanguagesChart() {
@@ -112,7 +114,8 @@ btnSearch.addEventListener("click", function(){
     })
     .catch(function(error) {
         console.log('There has been a problem with your fetch operation: ', error.message);
-        alert("Username not valid. :( Try another one. ")
+        mainContent.classList.add('is-hidden');
+        message.classList.remove('is-hidden')
     })
 });
 
