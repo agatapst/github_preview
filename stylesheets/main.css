@@ -1,5 +1,5 @@
 body {
-padding: 2.25em 1.6875em;
+  padding: 2.25em 1.6875em;
   background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
   background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
   background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
@@ -21,7 +21,6 @@ padding: 2.25em 1.6875em;
 .general-column {
     text-align: center; 
     font-family: 'Roboto Mono', sans-serif;
-    position: relative;
 }
 
 #search-section h1 {
@@ -35,13 +34,13 @@ h2 {
 }
 
 #search-section {
-    background: yellow; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
     flex-direction: column; 
     background: #F6EAEA;
     box-shadow: 0 0 3px rgba(191, 175, 156, 0.9);
+    position: relative;
 }
 
 ul {
@@ -59,9 +58,9 @@ ul {
 
 .search-cat {
     position: absolute;
-    left: 50px; 
-    top: 100px; 
-    width: 40%; 
+    left: -200px; 
+    top: 20px; 
+    width: 75%; 
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
@@ -72,7 +71,6 @@ ul {
 }
 
 input {
-    font-family: 'Roboto Mono', sans-serif;
     font-size: 16px;
     margin-top: 10px;
     background: transparent;
@@ -101,6 +99,12 @@ input {
     background: #66454D;
     border: none;
     font-size: 15px; 
+    position: relative;
+ }
+
+ .features {
+    display: flex;
+    flex-shrink: 1;
  }
 
  .features h1 {
@@ -112,7 +116,7 @@ input {
  }
 
  #your-repositories {
-     margin-bottom: 35px;
+     margin-bottom: 45px;
  }
 
  .features h2 {
@@ -135,8 +139,24 @@ input {
     font-size: 16px;
     margin-bottom: 20px;
     padding: 30px;
-    width: 400px;
+    width: 450px;
     text-align: center;
     align-items: center;
     border-bottom: 1px solid #DB5D43;
+ }
+
+ #myChart {
+    max-width: 100% !important;
+    margin: 0 auto;
+ }
+
+ @media only screen and (max-width: 767px) {
+    .search-cat {
+        position: static;   
+        width: 70%; 
+    } 
+
+    .main-column {
+        height: 400px;
+    }
  }
