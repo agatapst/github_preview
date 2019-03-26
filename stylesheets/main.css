@@ -6,34 +6,19 @@ body {
   -webkit-background-size: 3px 3px;
   -moz-background-size: 3px 3px;
   background-size: 3px 3px;
-  }
+}
+
+.main-column, .general-column {
+    text-align: center; 
+    font-family: "Roboto Mono", sans-serif;
+}
 
 .main-column {
     width: 200px;
-    height: 250px; 
+    min-height: 250px; 
     margin-top: 70px;
-    margin-bottom: 80px; 
-    text-align: center; 
-    font-family: 'Roboto Mono', sans-serif;
+    margin-bottom: 80px;
 } 
-
-.general-column {
-    text-align: center; 
-    font-family: 'Roboto Mono', sans-serif;
-}
-
-.columns {
-    margin: 0 !important;
-}
-#search-section h1 {
-    font-size: 30px; 
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-family: 'Quicksand', sans-serif; 
-    font-size: 15px; 
-}
 
 #search-section {
     display: flex; 
@@ -43,6 +28,16 @@ h2 {
     background: #F6EAEA;
     box-shadow: 0 0 3px rgba(191, 175, 156, 0.9);
     position: relative;
+}
+
+#search-section h1 {
+    font-size: 30px; 
+    margin-bottom: 20px;
+}
+
+#search-section h2 {
+    font-family: "Quicksand", sans-serif; 
+    font-size: 15px; 
 }
 
 ul {
@@ -60,15 +55,13 @@ ul {
 
 .search-cat {
     position: absolute;
-    left: -200px; 
-    top: 20px; 
-    width: 75%; 
+    left: -44px;
+    bottom: -82px;
+    width: 260px;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
     pointer-events: none;
 }
 
@@ -80,21 +73,22 @@ input {
     outline: 0;
     border-bottom: 3px solid #E2E2E2;
     width: 100%;
- }
+}
  
- input:-webkit-autofill {
+input:-webkit-autofill {
+    box-shadow: inset 0 0 0px 9999px #F6EAEA;
     -webkit-box-shadow: inset 0 0 0px 9999px #F6EAEA;
-  }
+}
 
- input:focus {
+input:focus {
    border-bottom: solid 4px #DB5D43;
    background: transparent;
    color: #DB5D43;
 }
 
- #search {
-    font-family: 'Roboto Mono', sans-serif;
-    color: white; 
+#search-button {
+    font-family: "Roboto Mono", sans-serif;
+    color: #FFFFFF; 
     outline: 0;
     margin-top: 10px; 
     padding: 5px 10px;
@@ -102,14 +96,14 @@ input {
     border: none;
     font-size: 15px; 
     position: relative;
- }
+}
 
- .features {
-    display: flex;
-    flex-shrink: 1;
- }
+#repositories-header {
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
 
- .features h1 {
+.features h1 {
     width: 200px;
     font-size: 18px;
     margin: 0 auto;
@@ -117,70 +111,60 @@ input {
     background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
  }
 
- #your-repositories {
-     margin-bottom: 45px;
- }
+.features h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: "Quicksand", sans-serif
+}
 
- .features h2 {
-     margin-top: 20px;
-     margin-bottom: 10px;
-     font-size: 20px;
- }
+.features h3 {
+    font-size: 20px;
+}
 
- .features h3 {
-     font-size: 20px;
- }
+.features span {
+   font-size: 17px;
+   color: #DB5D43;
+}
 
- .features span {
-    font-size: 17px;
-    color: #DB5D43;
- }
+.features p {
+   font-family: "Quicksand", sans-serif;
+   font-size: 16px;
+   margin-bottom: 20px;
+   padding: 30px;
+   width: 430px;
+   text-align: center;
+   align-items: center;
+   border-bottom: 1px solid #DB5D43;
+}
 
- .features p {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 30px;
-    width: 430px;
-    text-align: center;
-    align-items: center;
+table {
+    margin: 0 auto;
+}
+
+tr {
     border-bottom: 1px solid #DB5D43;
- }
+}
 
- table {
-     margin: 0 auto;
- }
+td {
+    padding: 20px !important;
+}
 
- tr {
-    border-bottom: 1px solid #DB5D43;
- }
-
- td {
-     padding: 20px !important;
- }
-
- #my-chart {
+#my-chart {
     max-width: 100% !important;
     margin: 40px 0 auto;
- }
+}
 
  /* media queries */
- @media only screen and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
     .search-cat {
         position: static;   
-        width: 70%; 
-    } 
-
-    .main-column {
-        height: 400px;
-        width: 400px;
+        width: 50%; 
     }
- }
+}
 
- @media only screen and (max-width: 479px) {
+@media only screen and (max-width: 479px) {
     .features p, .features h2  { 
         width: 100%; 
     } 
- }
-
- 
+}

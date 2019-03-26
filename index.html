@@ -3,13 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Top repositories app" content="The best Github repositories">
-    <title>Top repositories app</title>
+    <meta name="search for repos" content="Search for your repos and languages you have used.">
+    <title>search for repos</title>
     <link rel="stylesheet" href="stylesheets/normalize.css">
-    <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Quicksand">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
 
@@ -21,29 +21,27 @@
         </div>
     </article>
     <div class="columns is-centered is-mobile">
-        <div class="main-column column is-half" id="search-section">
+        <div class="main-column column is-half-desktop is-two-thirds-tablet" id="search-section">
             <div>
                 <i class="github-icon fab fa-github"></i>
                 <h1>search for repos</h1>
                 <form><input placeholder="username" id="login"></input></form>
-                <button id="search">search</button>
+                <button id="search-button">search</button>
             </div>
-            <div>
-                <img src="images/cat-working-remotely.png" alt="cat working remotely" class="search-cat">
-            </div>
+            <img src="images/cat-working-remotely.png" alt="cat working remotely" class="search-cat">
         </div>
     </div>
     <div class="general-column columns is-desktop is-hidden" id="main-content">
         <div class="features column" id="repositories">
-            <h1 id="your-repositories">your repositories</h1>
-            <h2>what have you been up to on your github?</h2>
+            <h1>your repositories</h1>
+            <h2 id="repositories-header">what have you been up to on your github?</h2>
             <div>
                 <ul id="list-of-repos"></ul>    
             </div>
         </div> 
         <div class="features column" id="languages">
             <h1>your programming languages</h1>
-            <h2>in how many repositories<br>the given language was the main one?</h2>
+            <h2>in how many repositories a given language<br>was the main one?</h2>
             <div>
                 <table id="list-of-languages"></table>
                 <canvas id="my-chart" width="250" height="200"></canvas>
